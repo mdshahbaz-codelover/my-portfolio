@@ -92,6 +92,18 @@ body {
   font-size: 18px;
 }
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-form .error {
+  color: red;
+  font-size: 0.85rem;
+}
+
+
 /* BUTTONS */
 .btn {
   padding: 10px 20px;

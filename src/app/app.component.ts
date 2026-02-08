@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  // ✅ Technical Skills (Grouped properly from resume)
   skills: string[] = [
     'Angular (v12–v18)',
     'TypeScript',
@@ -53,7 +52,6 @@ export class AppComponent implements OnInit {
     'Agile / Scrum'
   ];
 
-  // ✅ Projects aligned with resume
   projects = [
     {
       title: 'SureOps – Subscription & Billing Management Platform',
@@ -78,22 +76,21 @@ export class AppComponent implements OnInit {
     this.submitted = true;
 
     if (this.contactForm.invalid) {
-      return;
+      return; // Stop if the form is invalid
     }
 
     console.log('Form Data:', this.contactForm.value);
-
     alert('Thank you! I will get back to you soon.');
 
     this.contactForm.reset();
     this.submitted = false;
   }
 
-  toggleCover() {
-    this.showCover = !this.showCover;
-  }
-  // Optional: Easy access getter for validation in HTML
   get f() {
     return this.contactForm.controls;
+  }
+
+  toggleCover() {
+    this.showCover = !this.showCover;
   }
 }

@@ -26,14 +26,14 @@
         <a class="btn outline" href="mailto:mohdshahbazalam1@gmail.com">Hire Me</a>
       </div>
 
-     <div class="social-links">
-  <a href="https://www.linkedin.com/in/md-shahbaz-80094320a/" target="_blank">
-    <i class="fab fa-linkedin"></i> LinkedIn
-  </a>
-  <a href="https://github.com/mdshahbaz-codelover" target="_blank">
-    <i class="fab fa-github"></i> GitHub
-  </a>
-</div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/md-shahbaz-80094320a/" target="_blank">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/mdshahbaz-codelover" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
     </div>
   </section>
 
@@ -84,59 +84,80 @@
   </section>
 
   <!-- COVER LETTER -->
-<section id="cover-letter" class="section">
-  <h2>Cover Letter</h2>
-  <div class="card cover-letter">
-    <p>
-      Dear Hiring Manager,
-    </p>
+  <section id="cover-letter" class="section">
+    <h2>Cover Letter</h2>
+    <div class="card cover-letter">
+      <p>
+        Dear Hiring Manager,
+      </p>
 
-    <p>
-      I am a passionate Angular Developer with 3.5 years of experience building 
-      scalable, high-performance web applications using Angular (v12–v18), 
-      NgRx, and RESTful APIs. I have successfully migrated enterprise applications 
-      from Angular 12 to 18, improving performance by up to 40% through 
-      lazy loading and optimized architecture.
-    </p>
+      <p>
+        I am a passionate Angular Developer with 3.5 years of experience building
+        scalable, high-performance web applications using Angular (v12–v18),
+        NgRx, and RESTful APIs. I have successfully migrated enterprise applications
+        from Angular 12 to 18, improving performance by up to 40% through
+        lazy loading and optimized architecture.
+      </p>
 
-    <p>
-      At Magnaquest Technologies, I have worked on subscription and billing 
-      platforms, integrating 15+ APIs and improving system efficiency by 30%. 
-      I collaborate effectively in Agile teams and maintain high code quality 
-      through unit testing and peer reviews.
-    </p>
+      <p>
+        At Magnaquest Technologies, I have worked on subscription and billing
+        platforms, integrating 15+ APIs and improving system efficiency by 30%.
+        I collaborate effectively in Agile teams and maintain high code quality
+        through unit testing and peer reviews.
+      </p>
 
-    <p>
-      With strong backend knowledge in .NET 6/8, SQL Server, and Azure, 
-      I bring full-stack understanding that helps deliver robust and scalable solutions.
-    </p>
+      <p>
+        With strong backend knowledge in .NET 6/8, SQL Server, and Azure,
+        I bring full-stack understanding that helps deliver robust and scalable solutions.
+      </p>
 
-    <p>
-      I am excited to contribute my technical expertise, problem-solving skills, 
-      and dedication to building impactful products for your organization.
-    </p>
+      <p>
+        I am excited to contribute my technical expertise, problem-solving skills,
+        and dedication to building impactful products for your organization.
+      </p>
 
-    <p>
-      Sincerely, <br>
-      <strong>Md Shahbaz</strong>
-    </p>
+      <p>
+        Sincerely, <br>
+        <strong>Md Shahbaz</strong>
+      </p>
 
-    <a class="btn primary" href="assets/md_shahbaz_cover_letter.pdf" download>
-      Download Cover Letter
-    </a>
-    
-  </div>
-</section>
+      <a class="btn primary" href="assets/md_shahbaz_cover_letter.pdf" download>
+        Download Cover Letter
+      </a>
 
-  <!-- CONTACT -->
+    </div>
+  </section>
+
   <section id="contact" class="section">
     <h2>Contact Me</h2>
     <form [formGroup]="contactForm" (ngSubmit)="submit()" class="contact-form">
+
+      <!-- Name Field -->
       <input type="text" placeholder="Name" formControlName="name">
+      <div class="error" *ngIf="submitted && f['name'].errors">
+        <div *ngIf="f['name'].errors?.['required']">Name is required</div>
+        <div *ngIf="f['name'].errors?.['minlength']">Name must be at least 3 characters</div>
+      </div>
+
+
+      <!-- Email Field -->
       <input type="email" placeholder="Email" formControlName="email">
+      <div class="error" *ngIf="submitted && f['email'].errors">
+        <div *ngIf="f['email'].errors?.['required']">Email is required</div>
+        <div *ngIf="f['email'].errors?.['email']">Email is invalid</div>
+      </div>
+
+      <!-- Message Field -->
       <textarea placeholder="Message" formControlName="message"></textarea>
+      <div class="error" *ngIf="submitted && f['message'].errors">
+        <div *ngIf="f['message'].errors?.['required']">Message is required</div>
+        <div *ngIf="f['message'].errors?.['minlength']">Message must be at least 10 characters</div>
+      </div>
+
+
       <button class="btn primary" type="submit">Send Message</button>
     </form>
   </section>
+
 
 </div>
