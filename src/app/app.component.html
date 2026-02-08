@@ -1,0 +1,142 @@
+<nav class="navbar">
+  <div class="logo">Md Shahbaz</div>
+  <div class="nav-links">
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-left">
+      <h1>Md Shahbaz</h1>
+      <h3>Angular Developer | Hyderabad, India</h3>
+      <p>
+        Front-End Developer with 3.5 years of experience in Angular (v12–v18),
+        building scalable SPA applications with NgRx, REST APIs, and .NET backend.
+        Improved performance up to 40% using lazy loading & code splitting.
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn primary" href="assets/MD_Shahbaz_Resume.pdf" download>Download Resume</a>
+        <a class="btn outline" href="mailto:mohdshahbazalam1@gmail.com">Hire Me</a>
+      </div>
+
+     <div class="social-links">
+  <a href="https://www.linkedin.com/in/md-shahbaz-80094320a/" target="_blank">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+  <a href="https://github.com/mdshahbaz-codelover" target="_blank">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+</div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <span *ngFor="let skill of skills" class="chip">{{skill}}</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h2>Key Projects</h2>
+
+    <div *ngFor="let p of projects" class="card">
+      <h3>{{p.title}}</h3>
+      <ul>
+        <li *ngFor="let d of p.details">{{d}}</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section">
+    <h2>Professional Experience</h2>
+
+    <div class="card">
+      <h3>Software Engineer | Magnaquest Technology</h3>
+      <p class="date">Sept 2023 – Present | Hyderabad</p>
+      <ul>
+        <li>Improved Angular SPAs boosting engagement by 20%</li>
+        <li>Integrated 15+ REST APIs reducing discrepancies by 30%</li>
+        <li>Reduced first load time by 40%</li>
+        <li>Increased code quality via unit testing & reviews</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Junior Developer | Tata Business Hub</h3>
+      <p class="date">Aug 2022 – Sept 2023 | Gurugram</p>
+      <ul>
+        <li>Developed Angular + .NET full stack solutions</li>
+        <li>Achieved 90% unit test coverage</li>
+        <li>Improved performance by 80% via API optimization</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COVER LETTER -->
+<section id="cover-letter" class="section">
+  <h2>Cover Letter</h2>
+  <div class="card cover-letter">
+    <p>
+      Dear Hiring Manager,
+    </p>
+
+    <p>
+      I am a passionate Angular Developer with 3.5 years of experience building 
+      scalable, high-performance web applications using Angular (v12–v18), 
+      NgRx, and RESTful APIs. I have successfully migrated enterprise applications 
+      from Angular 12 to 18, improving performance by up to 40% through 
+      lazy loading and optimized architecture.
+    </p>
+
+    <p>
+      At Magnaquest Technologies, I have worked on subscription and billing 
+      platforms, integrating 15+ APIs and improving system efficiency by 30%. 
+      I collaborate effectively in Agile teams and maintain high code quality 
+      through unit testing and peer reviews.
+    </p>
+
+    <p>
+      With strong backend knowledge in .NET 6/8, SQL Server, and Azure, 
+      I bring full-stack understanding that helps deliver robust and scalable solutions.
+    </p>
+
+    <p>
+      I am excited to contribute my technical expertise, problem-solving skills, 
+      and dedication to building impactful products for your organization.
+    </p>
+
+    <p>
+      Sincerely, <br>
+      <strong>Md Shahbaz</strong>
+    </p>
+
+    <a class="btn primary" href="assets/md_shahbaz_cover_letter.pdf" download>
+      Download Cover Letter
+    </a>
+    
+  </div>
+</section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="submit()" class="contact-form">
+      <input type="text" placeholder="Name" formControlName="name">
+      <input type="email" placeholder="Email" formControlName="email">
+      <textarea placeholder="Message" formControlName="message"></textarea>
+      <button class="btn primary" type="submit">Send Message</button>
+    </form>
+  </section>
+
+</div>
