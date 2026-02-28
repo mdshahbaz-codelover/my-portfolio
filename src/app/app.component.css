@@ -106,11 +106,12 @@ body {
 
 /* BUTTONS */
 .btn {
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  margin-right: 10px;
-  display: inline-block;
+ padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    /* margin-right: 10px; */
+    display: inline-block;
+    width: 30%;
 }
 
 .primary {
